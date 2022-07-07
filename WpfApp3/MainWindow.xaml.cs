@@ -20,26 +20,26 @@ namespace WpfApp3
     /// </summary>
     public partial class MainWindow : Window
     {
-        Consult client;
-        Clients clients;
+        Consult Fclient;
+
         public MainWindow()
-        {     
+        {
             InitializeComponent();
+            Fclient = new Consult(this);
             ComboBox.SelectedIndex = 0;
-            client = new Consult(this);
-            
+
         }
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
 
 
         private void MenuItem_Click_Clear(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -59,10 +59,28 @@ namespace WpfApp3
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if(ComboBox.SelectedIndex == 0)
-            //{
-            //    client.PassportData = "***";
-            //}
-        }            
+            logList.Items.Clear();
+            foreach (var cl in Fclient.client)
+            {
+                Clients temp = new Clients(cl.MidleName, cl.FirstName, cl.LastName, cl.PhoneNumber, (ComboBox.SelectedIndex == 0) ? "********" : cl.PassportData);
+                logList.Items.Add(temp);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string Text = TextBox1.Text;
+            foreach(var cl in Fclient.client)
+            {
+                Clients temp = new Clients(cl.MidleName, cl.FirstName, cl.LastName, (ComboBox.SelectedIndex == 0) ? cl.PhoneNumber :
+                    (TextBox1.Text != null) ? TextBox1.Text : cl.PhoneNumber, cl.PassportData);
+                logList.Items[logList.SelectedIndex] = temp;
+            }
+
+        }
+
+        private void logList_Selected(string text,object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

@@ -38,18 +38,18 @@
                             BorderThickness="1"
                             CornerRadius="10">
                         <StackPanel x:Name="Bla" Margin="10">
-                            <TextBlock Text="{Binding FirstName}" Margin="0" FontSize="15" Foreground="Wheat"/>
+                            <TextBlock Text="{Binding FirstName}" Margin="0" FontSize="15" Foreground="Black"/>
                             <TextBlock Text="{Binding MidleName}" Margin="0" FontSize="15" Foreground="Wheat"/>
                             <TextBlock Text="{Binding LastName}" Margin="0" FontSize="15" Foreground="Wheat"/>
                             <TextBlock Text="{Binding PhoneNumber}" Margin="0" FontSize="15" Foreground="Wheat"/>
-                            <TextBox x:Name="PassData" Text="{Binding PassportData}" Margin="0" FontSize="15" Foreground="Wheat"/>
+                            <TextBlock Text="{Binding PassportData}" Margin="0" FontSize="15" Foreground="Wheat"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
 
         </ListBox>
-        <Button Grid.Column="1" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" Width="153" Height="41"
+        <Button Click="Button_Click" Grid.Column="1" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" Width="153" Height="41"
                 Background="HotPink">
             <TextBlock TextAlignment="Center"> Нажмите чтобы<LineBreak/> подтвердить изменения</TextBlock>
         </Button>

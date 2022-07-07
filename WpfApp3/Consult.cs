@@ -28,12 +28,11 @@ namespace WpfApp3
                 {
                     AllData += sr.ReadLine();
                     string[] splitData = AllData.Split(' ');
-                    if(splitData.Length == 5)
+                    if (splitData.Length == 5)
                     {
-                            Clients clientToAdd = new Clients(splitData[0], splitData[1], splitData[2], splitData[3], splitData[4]);
-                            client.Add(clientToAdd);
-                            w.logList.Items.Add(clientToAdd);
-                        Array.Clear(splitData,0,splitData.Length);
+                        Clients clientToAdd = new Clients(splitData[0], splitData[1], splitData[2], splitData[3], splitData[4]);
+                        client.Add(clientToAdd);
+                        Array.Clear(splitData, 0, splitData.Length);
                         AllData = "";
                     }
                 }
