@@ -21,12 +21,13 @@ namespace WpfApp3
     public partial class MainWindow : Window
     {
         Consult Fclient;
-
+        Manager man;
         public MainWindow()
         {
             InitializeComponent();
             Fclient = new Consult(this);
             ComboBox.SelectedIndex = 0;
+            man = new Manager(this);
 
         }
 
@@ -59,38 +60,22 @@ namespace WpfApp3
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            logList.Items.Clear();
-            foreach (var cl in Fclient.client)
-            {
-                Clients temp = new Clients(cl.MidleName, cl.FirstName, cl.LastName, cl.PhoneNumber, (ComboBox.SelectedIndex == 0) ? "********" : cl.PassportData);
-                logList.Items.Add(temp);
-            }
+            Fclient.CheckWhoUse();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                string Text = TextBox1.Text;
-                foreach (var cl in Fclient.client)
+                if(ComboBox.SelectedIndex == 1)
                 {
-                    if (ComboBox.SelectedIndex == 0)
-                    {
-                        Clients temp = new Clients(cl.MidleName, cl.FirstName, cl.LastName, cl.PhoneNumber, cl.PassportData);
-                        logList.Items[logList.SelectedIndex] = temp;
-                        break;
-                    }
-                    else
-                    {
-                        if (TextBox1.Text != null)
-                        {
-                            Clients temp = new Clients(cl.MidleName, cl.FirstName, cl.LastName, TextBox1.Text, cl.PassportData);
-                            logList.Items[logList.SelectedIndex] = temp;
-                        }
-                        break;
-                    }
-
+                    man.ChangePhoneNumber();
                 }
+                else
+                {
+                    MessageBox.Show("not enough rights", "Warning!", MessageBoxButton.OK);
+                }
+                
             }
             catch (Exception ex)
             {

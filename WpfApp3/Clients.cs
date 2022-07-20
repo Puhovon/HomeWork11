@@ -8,7 +8,7 @@ namespace WpfApp3
 {
     class Clients
     {
-        MainWindow w;
+        
 
         public string FirstName { get; set; }
         public string MidleName { get; set; }
@@ -24,16 +24,6 @@ namespace WpfApp3
             LastName = lastName;
             PhoneNumber = phoneNumber;
             PassportData = passportData;
-        }
-
-        
-
-        public void CheckToSecur()
-        {
-            if (w.ComboBox.SelectedIndex == 0)
-            {
-                PassportData = "*";
-            }
         }
     }
 }

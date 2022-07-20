@@ -38,5 +38,14 @@ namespace WpfApp3
                 }
             }
         }
+        public void CheckWhoUse()
+        {
+            w.logList.Items.Clear();
+            foreach (var cl in client)
+            {
+                Clients temp = new Clients(cl.MidleName, cl.FirstName, cl.LastName, cl.PhoneNumber, (w.ComboBox.SelectedIndex == 0) ? "********" : cl.PassportData);
+                w.logList.Items.Add(temp);
+            }
+        }
     }
 }
