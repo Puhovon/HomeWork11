@@ -19,7 +19,7 @@ namespace WpfApp3
             ReadData();
             
         }
-        private void ReadData(string path = @"Data.txt")
+        private void ReadData(string path = "Data.txt")
         {
             string AllData = "";
             using (StreamReader sr = new StreamReader(path))
