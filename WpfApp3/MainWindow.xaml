@@ -49,7 +49,7 @@
             </ListBox.ItemTemplate>
 
         </ListBox>
-        <Button Click="Button_Click" Grid.Column="1" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" Width="153" Height="41"
+        <Button Click="Button_Click" Grid.Column="1" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Width="153" Height="41"
                 Background="HotPink">
             <TextBlock TextAlignment="Center"> Нажмите чтобы<LineBreak/> подтвердить изменения</TextBlock>
         </Button>
@@ -58,7 +58,12 @@
             <ComboBoxItem Content="Consult"/>
             <ComboBoxItem Content="Manager"/>
         </ComboBox>
-        <TextBox x:Name="TextBox1" Grid.Column="1" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="152" Height="40" FontSize="20" TextAlignment="Center"/>
-
+        <TextBox x:Name="TextBox1" Grid.Column="1" HorizontalAlignment="Center" Margin="0,177,0,0" TextWrapping="Wrap" Text="Перписка данных через пробел" VerticalAlignment="Top" Width="152" Height="40" FontSize="14" TextAlignment="Center"/>
+        <ComboBox x:Name="ChangerSelect"  Grid.Column="1" HorizontalAlignment="Center" Margin="0,112,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="FirstName"/>
+            <ComboBoxItem Content="SecondName"/>
+            <ComboBoxItem Content="LastName"/>
+            <ComboBoxItem Content="PhoneNumber"/>
+        </ComboBox>
     </Grid>
 </Window>

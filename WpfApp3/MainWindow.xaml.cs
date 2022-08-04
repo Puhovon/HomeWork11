@@ -67,15 +67,7 @@ namespace WpfApp3
         {
             try
             {
-                if(ComboBox.SelectedIndex == 1)
-                {
-                    man.ChangePhoneNumber();
-                }
-                else
-                {
-                    MessageBox.Show("not enough rights", "Warning!", MessageBoxButton.OK);
-                }
-                
+                man.ChangeData();
             }
             catch (Exception ex)
             {

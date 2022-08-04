@@ -21,6 +21,7 @@ namespace WpfApp3
         }
         private void ReadData(string path = "Data.txt")
         {
+            
             string AllData = "";
             using (StreamReader sr = new StreamReader(path))
             {
